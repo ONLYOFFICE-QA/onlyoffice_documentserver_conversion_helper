@@ -17,4 +17,5 @@ install:
   - bundle install --without development
 script:
   - docker run -itd -p 80:80 onlyoffice/documentserver
+  - sleep 60
   - bundle exec rspec --fail-fast
