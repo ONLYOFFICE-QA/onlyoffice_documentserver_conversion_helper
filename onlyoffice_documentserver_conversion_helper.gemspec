@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.email = ['shockwavenn@gmail.com', 'flaminestone@gmail.com']
   s.files = `git ls-files lib LICENSE.txt README.md`.split($RS)
   s.homepage = 'http://rubygems.org/gems/onlyoffice_documentserver_conversion_helper'
-  s.add_runtime_dependency('jwt', '~> 1')
+  s.add_runtime_dependency('jwt', '~> 2')
   s.license = 'AGPL-3.0'
 end
