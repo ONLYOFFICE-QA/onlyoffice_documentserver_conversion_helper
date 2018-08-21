@@ -1,6 +1,7 @@
 require 'jwt'
 require 'net/http'
 require 'securerandom'
+require 'timeout'
 require_relative 'onlyoffice_documentserver_conversion_helper/version'
 
 # Stuff for working with conversion service
@@ -80,7 +81,20 @@ module OnlyofficeDocumentserverConversionHelper
       http = Net::HTTP.new(uri.host, uri.port)
       http.read_timeout = @timeout
       http.use_ssl = true if uri.scheme == 'https'
-      http.request(req).body
+      send_request(http, req)
+    end
+
+    # sending request every 5 second within @timeout
+    # responce will contain 504 if
+    # return responce body
+    def send_request(http, req)
+      Timeout.timeout(@timeout) do
+        (@timeout / 5).times do
+          responce = http.request(req)
+          return responce.body unless responce.code == '504'
+          sleep 5
+        end
+      end
     end
 
     # @return [Hash] with usl for download file after conversion and response data
