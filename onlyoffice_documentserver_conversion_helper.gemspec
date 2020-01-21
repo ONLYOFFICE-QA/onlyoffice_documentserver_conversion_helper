@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'onlyoffice_documentserver_conversion_helper'
   s.version = OnlyofficeDocumentserverConversionHelper::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.1'
+  s.required_ruby_version = '>= 2.3'
   s.authors = ['Pavel Lobashov', 'Dmitry Rotaty']
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
   s.description = 'Helper method for using ONLYOFFICE DocumentServer conversion api'
