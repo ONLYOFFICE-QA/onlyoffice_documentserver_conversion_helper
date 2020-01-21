@@ -94,6 +94,7 @@ module OnlyofficeDocumentserverConversionHelper
         (@timeout / 5).times do
           responce = http.request(req)
           return responce.body unless responce.code == '504'
+
           sleep 5
         end
       end
@@ -111,6 +112,7 @@ module OnlyofficeDocumentserverConversionHelper
     def perform_convert(args = {})
       args = { url: args } if args.is_a?(String)
       raise 'Parameter :url with link on file is necessary!!' if args[:url].nil? || args.nil?
+
       @file_url = args[:url]
       @input_filetype = File.extname(@file_url).delete('.')
       advanced_params = autocomplete_missing_params(args)
