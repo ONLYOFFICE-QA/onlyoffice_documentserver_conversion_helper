@@ -19,19 +19,6 @@ Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'lib/onlyoffice_documentserver_conversion_helper.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, never
-Style/FrozenStringLiteralComment:
-  Exclude:
-    - 'Gemfile'
-    - 'lib/onlyoffice_documentserver_conversion_helper.rb'
-    - 'lib/onlyoffice_documentserver_conversion_helper/version.rb'
-    - 'onlyoffice_documentserver_conversion_helper.gemspec'
-    - 'spec/convertsservice_spec.rb'
-    - 'spec/spec_helper.rb'
-
 # Offense count: 10
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
