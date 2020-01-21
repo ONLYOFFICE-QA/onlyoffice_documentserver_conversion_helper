@@ -2,10 +2,9 @@
 
 require 'spec_helper'
 
-describe 'ConvertService' do
+describe OnlyofficeDocumentserverConversionHelper::ConvertFileData do
   let(:converter) do
-    OnlyofficeDocumentserverConversionHelper::ConvertFileData
-      .new('http://localhost')
+    described_class.new('http://localhost')
   end
 
   describe 'Convert test odt file to pdf' do
