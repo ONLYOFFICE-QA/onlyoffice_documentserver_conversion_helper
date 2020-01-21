@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3'
   s.authors = ['Pavel Lobashov', 'Dmitry Rotaty']
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
-  s.description = 'Helper method for using ONLYOFFICE DocumentServer conversion api'
+  s.description = 'Helper method for using '\
+                  'ONLYOFFICE DocumentServer conversion api'
   s.email = ['shockwavenn@gmail.com', 'flaminestone@gmail.com']
   s.files = `git ls-files lib LICENSE.txt README.md`.split($RS)
   s.homepage = 'http://rubygems.org/gems/onlyoffice_documentserver_conversion_helper'

@@ -3,7 +3,10 @@
 require 'spec_helper'
 
 describe 'ConvertService' do
-  let(:converter) { OnlyofficeDocumentserverConversionHelper::ConvertFileData.new('http://localhost') }
+  let(:converter) do
+    OnlyofficeDocumentserverConversionHelper::ConvertFileData
+      .new('http://localhost')
+  end
 
   it 'Convert test odt file to pdf' do
     result = converter.perform_convert(url: 'https://s3.us-west-2.amazonaws.com/nct-data-share/odt/About-Svet.odt')

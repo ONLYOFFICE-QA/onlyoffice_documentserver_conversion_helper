@@ -10,9 +10,11 @@ require_relative 'onlyoffice_documentserver_conversion_helper/version'
 # See: https://api.onlyoffice.com/editors/conversionapi
 module OnlyofficeDocumentserverConversionHelper
   # ==== Examples
-  # ConvertFileData.new('https://doc-linux.teamlab.info').perform_convert('http://testrail-nct.tk/files/convertation_select/googerd.docx')
-  # ConvertFileData.new('https://doc-linux.teamlab.info').perform_convert({:url=>'http://testrail-nct.tk/files/convertation_select/googerd.docx'})
-  # ConvertFileData.new('https://doc-linux.teamlab.info').perform_convert({:url=>'http://testrail-nct.tk/files/convertation_select/googerd.docx', :outputtype => 'pdf'})
+  # converter = ConvertFileData.new('https://server')
+  # converter.perform_convert('http://files/googerd.docx')
+  # converter.perform_convert({:url=>'http://files/googerd.docx'})
+  # converter.perform_convert({:url=>'http://files/googerd.docx',
+  #                            :outputtype => 'pdf'})
   class ConvertFileData
     attr_accessor :file_url
     attr_accessor :key
@@ -55,7 +57,9 @@ module OnlyofficeDocumentserverConversionHelper
 
     def autocomplete_missing_params(params)
       params[:key] = key_auto unless params.key?(:key)
-      params[:outputtype] = output_file_type_auto unless params.key?(:outputtype)
+      unless params.key?(:outputtype)
+        params[:outputtype] = output_file_type_auto
+      end
       params[:filetype] = input_filetype unless params.key?(:filetype)
       params
     end
@@ -63,7 +67,8 @@ module OnlyofficeDocumentserverConversionHelper
     # @return [String] with url to result file
     # @param [String] data is a response body
     # @param [String] file_format is a format of result file
-    # Method will get link from response body. Link start from 'https', and end from result file format
+    # Method will get link from response body.
+    # Link start from 'https', and end from result file format
     def get_url_from_responce(data, file_format)
       res_result = /(http|https).*(#{file_format})/.match(data)
       CGI.unescapeHTML(res_result.to_s)
@@ -100,18 +105,24 @@ module OnlyofficeDocumentserverConversionHelper
       end
     end
 
-    # @return [Hash] with usl for download file after conversion and response data
-    # @param [Hash] args collect all parameters of request OR [String] if you not need to use advensed params and want to set all etc params automaticly.
-    # All args, except of :url and if it is [Hash], will be attache in end of request
+    # @return [Hash] with usl for download file
+    # after conversion and response data
+    # @param [Hash] args collect all parameters of request
+    #   OR [String] if you not need to use advenced params
+    # and want to set all etc params automaticly.
+    # All args, except of :url and if it is [Hash],
+    # will be attache in end of request
     # ==== Examples
     # perform_convert('https://google.com/filename.docx')
     # perform_convert({:url => 'https://google.com/filename.docx'})
     # perform_convert({:url => 'https://google.com/filename.docx',
-    #                 :key=>'askjdhaskdasdasdi',
-    #                 :outputtype => 'pdf'})
+    #                  :key=>'askjdhaskdasdasdi',
+    #                  :outputtype => 'pdf'})
     def perform_convert(args = {})
       args = { url: args } if args.is_a?(String)
-      raise 'Parameter :url with link on file is necessary!!' if args[:url].nil? || args.nil?
+      if args[:url].nil? || args.nil?
+        raise 'Parameter :url with link on file is necessary!!'
+      end
 
       @file_url = args[:url]
       @input_filetype = File.extname(@file_url).delete('.')
