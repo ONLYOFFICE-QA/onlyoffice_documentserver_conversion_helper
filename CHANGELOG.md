@@ -7,10 +7,13 @@
 * Use GitHub Actions instead of TravisCI
 * Add `rake` development dependencies
 * Add `markdownlint` check in CI
+* Add support of `rubocop-performance` and `rubocop-rake`
 
 ### Changes
 
 * Require minimal ruby 2.5
+* Cleanup `gemspec` file
+* Store dependencies in `gemspec`
 
 ### Fixes
 
