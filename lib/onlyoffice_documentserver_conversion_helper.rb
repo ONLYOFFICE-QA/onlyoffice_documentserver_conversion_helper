@@ -57,9 +57,7 @@ module OnlyofficeDocumentserverConversionHelper
 
     def autocomplete_missing_params(params)
       params[:key] = key_auto unless params.key?(:key)
-      unless params.key?(:outputtype)
-        params[:outputtype] = output_file_type_auto
-      end
+      params[:outputtype] = output_file_type_auto unless params.key?(:outputtype)
       params[:filetype] = input_filetype unless params.key?(:filetype)
       params
     end
@@ -120,9 +118,7 @@ module OnlyofficeDocumentserverConversionHelper
     #                  :outputtype => 'pdf'})
     def perform_convert(args = {})
       args = { url: args } if args.is_a?(String)
-      if args[:url].nil? || args.nil?
-        raise 'Parameter :url with link on file is necessary!!'
-      end
+      raise 'Parameter :url with link on file is necessary!!' if args[:url].nil? || args.nil?
 
       @file_url = args[:url]
       @input_filetype = File.extname(@file_url).delete('.')
