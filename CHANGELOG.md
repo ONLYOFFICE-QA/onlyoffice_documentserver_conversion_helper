@@ -9,6 +9,7 @@
 * Add `markdownlint` check in CI
 * Add support of `rubocop-performance` and `rubocop-rake`
 * Add `dependabot` config
+* Add `rubocop` check in CI
 
 ### Changes
 
