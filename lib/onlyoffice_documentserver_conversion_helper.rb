@@ -16,9 +16,13 @@ module OnlyofficeDocumentserverConversionHelper
   # converter.perform_convert({:url=>'http://files/googerd.docx',
   #                            :outputtype => 'pdf'})
   class ConvertFileData
+    # @return [String] file_url to convert
     attr_accessor :file_url
+    # @return [String] key for convert operation
     attr_accessor :key
+    # @return [String] input_filetype format
     attr_writer :input_filetype
+    # @return [String] output_file_type format
     attr_accessor :output_file_type
 
     DOCUMENT_EXTENSIONS = %w[TXT HTML HTM ODT DOCT DOCX RTF DOC PDF].freeze
