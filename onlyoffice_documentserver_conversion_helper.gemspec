@@ -1,20 +1,38 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path('lib', __dir__)
-require 'onlyoffice_documentserver_conversion_helper/version'
+# frozen_string_literal: true
+
+require_relative 'lib/onlyoffice_documentserver_conversion_helper/name'
+require_relative 'lib/onlyoffice_documentserver_conversion_helper/version'
+
 Gem::Specification.new do |s|
-  s.name = 'onlyoffice_documentserver_conversion_helper'
+  s.name = OnlyofficeDocumentserverConversionHelper::Name::STRING
   s.version = OnlyofficeDocumentserverConversionHelper::Version::STRING
   s.platform = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.5'
-  s.authors = ['Pavel Lobashov', 'Dmitry Rotaty']
+  s.authors = ['ONLYOFFICE', 'Pavel Lobashov', 'Dmitry Rotaty']
+  s.email = %w[shockwavenn@gmail.com]
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
   s.description = 'Helper method for using '\
                   'ONLYOFFICE DocumentServer conversion api'
-  s.email = ['shockwavenn@gmail.com', 'flaminestone@gmail.com']
-  s.files = `git ls-files lib LICENSE.txt README.md`.split($RS)
-  s.homepage = 'http://rubygems.org/gems/onlyoffice_documentserver_conversion_helper'
-  s.add_runtime_dependency('jwt', '~> 2')
-  s.add_development_dependency('rake', '~> 13')
+  s.homepage = "https://github.com/onlyoffice-testing-robot/#{s.name}"
+  s.metadata = {
+    'bug_tracker_uri' => "#{s.homepage}/issues",
+    'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
+    'homepage_uri' => s.homepage,
+    'source_code_uri' => s.homepage
+  }
+  s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
+  s.add_runtime_dependency('jwt', '~> 2')
+  s.add_development_dependency('codecov', '~> 0')
+  s.add_development_dependency('overcommit', '~> 0')
+  s.add_development_dependency('rake', '~> 13')
+  s.add_development_dependency('rspec', '~> 3')
+  s.add_development_dependency('rubocop', '~> 1')
+  s.add_development_dependency('rubocop-performance', '~> 1')
+  s.add_development_dependency('rubocop-rake', '~> 0')
+  s.add_development_dependency('rubocop-rspec', '~> 2')
+  s.add_development_dependency('yard', '~> 0', '>= 0.9.20')
 end
