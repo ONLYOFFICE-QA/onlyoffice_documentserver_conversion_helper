@@ -8,12 +8,14 @@
 * Add `rake` development dependencies
 * Add `markdownlint` check in CI
 * Add support of `rubocop-performance` and `rubocop-rake`
+* Add `dependabot` config
 
 ### Changes
 
 * Require minimal ruby 2.5
 * Cleanup `gemspec` file
 * Store dependencies in `gemspec`
+* Lock dependencies in `Gemfile.lock` stored in repo
 
 ### Fixes
 
