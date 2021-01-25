@@ -10,6 +10,7 @@
 * Add support of `rubocop-performance` and `rubocop-rake`
 * Add `dependabot` config
 * Add `rubocop` check in CI
+* Add CI check that 100% code is documented
 
 ### Changes
 
@@ -17,6 +18,7 @@
 * Cleanup `gemspec` file
 * Store dependencies in `gemspec`
 * Lock dependencies in `Gemfile.lock` stored in repo
+* Add missing documentation
 
 ### Fixes
 

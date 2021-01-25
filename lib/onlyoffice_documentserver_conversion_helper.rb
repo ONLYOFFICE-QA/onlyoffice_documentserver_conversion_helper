@@ -25,8 +25,11 @@ module OnlyofficeDocumentserverConversionHelper
     # @return [String] output_file_type format
     attr_accessor :output_file_type
 
+    # @return [Array<String>] list of text formats
     DOCUMENT_EXTENSIONS = %w[TXT HTML HTM ODT DOCT DOCX RTF DOC PDF].freeze
+    # @return [Array<String>] list of spreadsheet formats
     SPREADSHEET_EXTENSIONS = %w[XLS XLSX ODS XLST].freeze
+    # @return [Array<String>] list of presentation formats
     PRESENTATION_EXTENSIONS = %w[PPT PPTX PPTT ODP].freeze
 
     def initialize(server_path,
@@ -41,24 +44,33 @@ module OnlyofficeDocumentserverConversionHelper
       @timeout = timeout
     end
 
+    # Auto detect output file format
+    # @return [String] result format
     def output_file_type_auto
       return 'docx' if DOCUMENT_EXTENSIONS.include?(@input_filetype.upcase)
       return 'xlsx' if SPREADSHEET_EXTENSIONS.include?(@input_filetype.upcase)
       return 'pptx' if PRESENTATION_EXTENSIONS.include?(@input_filetype.upcase)
     end
 
+    # @return [String] random generated key
     def key_auto
       SecureRandom.uuid
     end
 
+    # Get input file name from url
+    # @return [String] result file name
     def input_filetype
       File.extname(@file_url).delete('.')
     end
 
+    # @return [String] convert service url
     def convert_url
       "#{@server_path}/ConvertService.ashx"
     end
 
+    # Complete missing params
+    # @param [Hash] params manually defined
+    # @return [Hash] filled params hash
     def autocomplete_missing_params(params)
       params[:key] = key_auto unless params.key?(:key)
       params[:outputtype] = output_file_type_auto unless params.key?(:outputtype)
@@ -76,12 +88,19 @@ module OnlyofficeDocumentserverConversionHelper
       CGI.unescapeHTML(res_result.to_s)
     end
 
+    # Add jwt data to request
+    # @param [Net::HTTP::Post] request to add data
+    # @return [Net::HTTP::Post] request with JWT
     def add_jwt_data(request)
       payload_to_encode = { 'payload' => '{}' }
       jwt_encoded = JWT.encode payload_to_encode, @jwt_key
       request[@jwt_header] = "#{@jwt_prefix} #{jwt_encoded}"
     end
 
+    # Make request
+    # @param [String] convert_url to call
+    # @param [Hash] params with options
+    # @return [String] body of responce
     def request(convert_url, params)
       uri = URI(convert_url)
       req = Net::HTTP::Post.new(uri)
