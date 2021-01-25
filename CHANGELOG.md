@@ -5,6 +5,7 @@
 ### New Features
 
 * Use GitHub Actions instead of TravisCI
+* Add `rake` development dependencies
 
 ### Changes
 

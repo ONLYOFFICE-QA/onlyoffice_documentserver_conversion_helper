@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'onlyoffice_documentserver_conversion_helper'
   s.version = OnlyofficeDocumentserverConversionHelper::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.3'
+  s.required_ruby_version = '>= 2.5'
   s.authors = ['Pavel Lobashov', 'Dmitry Rotaty']
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
   s.description = 'Helper method for using '\
@@ -15,5 +15,6 @@ Gem::Specification.new do |s|
   s.files = `git ls-files lib LICENSE.txt README.md`.split($RS)
   s.homepage = 'http://rubygems.org/gems/onlyoffice_documentserver_conversion_helper'
   s.add_runtime_dependency('jwt', '~> 2')
+  s.add_development_dependency('rake', '~> 13')
   s.license = 'AGPL-3.0'
 end
