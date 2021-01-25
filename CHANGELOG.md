@@ -11,6 +11,10 @@
 
 * Require minimal ruby 2.5
 
+### Fixes
+
+* Fix incorrect link to test files
+
 ## 0.1.1 (2018-08-21)
 
 ### Changed
