@@ -2,9 +2,13 @@
 
 ## master (unreleased)
 
-### Changed
+### New Features
 
-* Require minimal ruby 2.3
+* Use GitHub Actions instead of TravisCI
+
+### Changes
+
+* Require minimal ruby 2.5
 
 ## 0.1.1 (2018-08-21)
 
