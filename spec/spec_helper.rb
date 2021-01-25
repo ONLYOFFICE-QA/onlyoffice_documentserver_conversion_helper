@@ -19,6 +19,6 @@ shared_examples 'Correct Request' do
   end
 end
 
-ODT_FILE = 'https://s3.us-west-2.amazonaws.com/nct-data-share/odt/About-Svet.odt'
-ODS_FILE = 'https://s3.us-west-2.amazonaws.com/nct-data-share/ods/dun6a2.ods'
-ODP_FILE = 'https://s3.us-west-2.amazonaws.com/nct-data-share/odp/123.odp'
+ODT_FILE = 'https://onlyoffice-documentserver-conversion-helper-rspec.s3.amazonaws.com/About-Svet.odt'
+ODS_FILE = 'https://onlyoffice-documentserver-conversion-helper-rspec.s3.amazonaws.com/dun6a2.ods'
+ODP_FILE = 'https://onlyoffice-documentserver-conversion-helper-rspec.s3.amazonaws.com/123.odp'
