@@ -134,8 +134,8 @@ module OnlyofficeDocumentserverConversionHelper
     # All args, except of :url and if it is [Hash],
     # will be attache in end of request
     # ==== Examples
-    # perform_convert('https://google.com/filename.docx')
-    # perform_convert({:url => 'https://google.com/filename.docx'})
+    # perform_convert('https://example.com/filename.docx')
+    # perform_convert({:url => 'https://example.com/filename.docx'})
     # perform_convert({:url => 'https://google.com/filename.docx',
     #                  :key=>'askjdhaskdasdasdi',
     #                  :outputtype => 'pdf'})
