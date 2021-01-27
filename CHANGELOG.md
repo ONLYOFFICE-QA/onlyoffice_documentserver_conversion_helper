@@ -20,6 +20,7 @@
 * Store dependencies in `gemspec`
 * Lock dependencies in `Gemfile.lock` stored in repo
 * Add missing documentation
+* Moved repo to `ONLYOFFICE-QA` org
 
 ### Fixes
 
