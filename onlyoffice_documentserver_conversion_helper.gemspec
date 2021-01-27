@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
   s.description = 'Helper method for using '\
                   'ONLYOFFICE DocumentServer conversion api'
-  s.homepage = "https://github.com/onlyoffice-testing-robot/#{s.name}"
+  s.homepage = "https://github.com/ONLYOFFICE-QA/#{s.name}"
   s.metadata = {
     'bug_tracker_uri' => "#{s.homepage}/issues",
     'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
