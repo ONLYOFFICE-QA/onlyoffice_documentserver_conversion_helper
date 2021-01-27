@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.2.0 (2021-01-27)
+
 ### New Features
 
 * Use GitHub Actions instead of TravisCI
