@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Use new uploader for `codecov` instead of deprecated one
+
 ## 0.2.0 (2021-01-27)
 
 ### New Features
