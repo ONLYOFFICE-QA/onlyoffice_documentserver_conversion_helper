@@ -84,7 +84,7 @@ module OnlyofficeDocumentserverConversionHelper
     # Method will get link from response body.
     # Link start from 'https', and end from result file format
     def get_url_from_responce(data, file_format)
-      res_result = /(http|https).*(#{file_format})/.match(data)
+      res_result = /(http|https).*\.(#{file_format})/.match(data)
       CGI.unescapeHTML(res_result.to_s)
     end
 
