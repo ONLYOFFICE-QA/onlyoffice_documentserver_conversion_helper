@@ -8,6 +8,7 @@ if ENV['CI'] == 'true'
 end
 
 require 'onlyoffice_documentserver_conversion_helper'
+require 'onlyoffice_documentserver_conversion_helper/xml_parser_data_spec'
 
 shared_examples 'Correct Request' do
   it 'Result url is not emty' do
