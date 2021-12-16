@@ -4,7 +4,7 @@ require 'jwt'
 require 'net/http'
 require 'securerandom'
 require 'timeout'
-require 'onlyoffice_documentserver_conversion_helper/xml_responce_parser'
+require_relative 'onlyoffice_documentserver_conversion_helper/xml_responce_parser'
 require_relative 'onlyoffice_documentserver_conversion_helper/version'
 
 # Stuff for working with conversion service
