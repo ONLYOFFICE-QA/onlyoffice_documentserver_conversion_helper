@@ -11,7 +11,7 @@ class XmlResponceParser
   # returning url with unescape HTML
   # @return [String] URL
   def result_url
-    res_result = /(http|https).*(#{@file_format})/.match(@string_with_xml)
+    res_result = /(http|https).*\.(#{@file_format})/.match(@string_with_xml)
     CGI.unescapeHTML(res_result.to_s)
   end
 end
