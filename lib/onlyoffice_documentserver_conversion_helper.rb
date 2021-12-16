@@ -4,6 +4,7 @@ require 'jwt'
 require 'net/http'
 require 'securerandom'
 require 'timeout'
+require_relative 'onlyoffice_documentserver_conversion_helper/xml_responce_parser'
 require_relative 'onlyoffice_documentserver_conversion_helper/version'
 
 # Stuff for working with conversion service
@@ -147,7 +148,7 @@ module OnlyofficeDocumentserverConversionHelper
       @input_filetype = File.extname(@file_url).delete('.')
       advanced_params = autocomplete_missing_params(args)
       data = request(convert_url, advanced_params)
-      url = get_url_from_responce(data, advanced_params[:outputtype])
+      url = XmlResponceParser.new(data, advanced_params[:outputtype]).result_url
       { url: url, data: data }
     end
   end
