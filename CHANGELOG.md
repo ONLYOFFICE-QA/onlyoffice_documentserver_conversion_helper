@@ -6,6 +6,7 @@
 
 * Use new uploader for `codecov` instead of deprecated one
 * Require `mfa` for releasing gem
+* Resolved the problem with the incorrect regexp script
 
 ## 0.2.0 (2021-01-27)
 
