@@ -4,11 +4,16 @@
 
 ## 0.3.0 (2021-12-17)
 
+### New Features
+
+* Add `ruby-3.1` to CI
+
 ### Changes
 
 * Use new uploader for `codecov` instead of deprecated one
 * Require `mfa` for releasing gem
 * Resolved the problem with the incorrect regexp script
+* Remove `ruby-2.5` from CI since it's EOLed
 
 ## 0.2.0 (2021-01-27)
 
