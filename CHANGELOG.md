@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Remove `codeclimate` config, since we don't use it any more
+
 ### Fixes
 
 * Fix `nodejs` version in CI
