@@ -9,6 +9,7 @@
 ### Changes
 
 * Remove `codeclimate` config, since we don't use it any more
+* Check `dependabot` at 8:00 Moscow time daily
 
 ### Fixes
 
