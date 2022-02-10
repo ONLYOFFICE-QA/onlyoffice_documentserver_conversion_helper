@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Fixes
+
+* Fix `nodejs` version in CI
+
 ## 0.3.0 (2021-12-17)
 
 ### New Features
