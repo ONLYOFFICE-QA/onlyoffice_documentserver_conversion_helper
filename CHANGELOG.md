@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.4.0 (2022-03-09)
+
 ### New Features
 
 * Add `yamllint` support in CI
