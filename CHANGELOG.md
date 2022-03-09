@@ -5,6 +5,7 @@
 ### New Features
 
 * Add `yamllint` support in CI
+* Add request.body encoding to jwt payload
 
 ### Changes
 

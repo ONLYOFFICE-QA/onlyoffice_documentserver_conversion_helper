@@ -93,7 +93,7 @@ module OnlyofficeDocumentserverConversionHelper
     # @param [Net::HTTP::Post] request to add data
     # @return [Net::HTTP::Post] request with JWT
     def add_jwt_data(request)
-      payload_to_encode = { 'payload' => '{}' }
+      payload_to_encode = { 'payload' => JSON.parse(request.body) }
       jwt_encoded = JWT.encode payload_to_encode, @jwt_key
       request[@jwt_header] = "#{@jwt_prefix} #{jwt_encoded}"
     end
