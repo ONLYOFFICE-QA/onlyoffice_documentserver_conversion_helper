@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Remove unused `ConvertFileData#get_url_from_responce` method
+
 ## 0.4.0 (2022-03-09)
 
 ### New Features
