@@ -13,6 +13,12 @@ describe OnlyofficeDocumentserverConversionHelper::ConvertFileData do
     it_behaves_like 'Correct Request'
   end
 
+  describe 'Convert test odt file to pdf if only one argument url' do
+    let(:target) { converter.perform_convert(ODT_FILE) }
+
+    it_behaves_like 'Correct Request'
+  end
+
   describe 'Convert test ods file to pdf' do
     let(:target) { converter.perform_convert(url: ODS_FILE) }
 
@@ -23,5 +29,11 @@ describe OnlyofficeDocumentserverConversionHelper::ConvertFileData do
     let(:target) { converter.perform_convert(url: ODP_FILE) }
 
     it_behaves_like 'Correct Request'
+  end
+
+  it 'Convert test odt to unknown format' do
+    expect { converter.perform_convert(url: 'https://example.com/fake.unknown') }
+      .to raise_error(OnlyofficeDocumentserverConversionHelper::UnknownConvertFormatError,
+                      /Unknown convert auto format: unknown/)
   end
 end

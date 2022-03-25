@@ -8,7 +8,7 @@ describe OnlyofficeDocumentserverConversionHelper::ConvertFileData, '#send_reque
   it 'correctly handle 504 errors' do
     url504 = URI('https://httpstat.us/504')
     http = Net::HTTP.new(url504.host, url504.port)
-    http.use_ssl = true if url504.scheme == 'https'
+    http.use_ssl = true
     req = Net::HTTP::Post.new(url504)
     expect { converter.send_request(http, req) }.to raise_error(Timeout::Error, /execution expired/)
   end

@@ -6,7 +6,7 @@
 
 * Remove unused `ConvertFileData#get_url_from_responce` method
 * Remove `codecov` support and use `simplecov`
-* Increase line test coverage to 100%
+* Increase line and branch test coverage to 100%
 
 ## 0.4.0 (2022-03-09)
 
