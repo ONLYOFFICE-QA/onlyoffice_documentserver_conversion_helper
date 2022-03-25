@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-if ENV['CI'] == 'true'
-  require 'simplecov'
-  SimpleCov.start
-  require 'simplecov-cobertura'
-  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
-end
+require 'simplecov'
+SimpleCov.start
 
 require 'onlyoffice_documentserver_conversion_helper'
 
