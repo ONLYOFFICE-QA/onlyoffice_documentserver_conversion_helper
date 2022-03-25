@@ -99,7 +99,7 @@ module OnlyofficeDocumentserverConversionHelper
       add_jwt_data(req)
       http = Net::HTTP.new(uri.host, uri.port)
       http.read_timeout = @timeout
-      http.use_ssl = true if uri.scheme == 'https'
+      http.use_ssl = (uri.scheme == 'https')
       send_request(http, req)
     end
 
