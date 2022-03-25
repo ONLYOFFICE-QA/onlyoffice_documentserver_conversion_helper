@@ -4,6 +4,7 @@ require 'jwt'
 require 'net/http'
 require 'securerandom'
 require 'timeout'
+require_relative 'onlyoffice_documentserver_conversion_helper/exceptions'
 require_relative 'onlyoffice_documentserver_conversion_helper/xml_responce_parser'
 require_relative 'onlyoffice_documentserver_conversion_helper/version'
 
@@ -46,11 +47,14 @@ module OnlyofficeDocumentserverConversionHelper
     end
 
     # Auto detect output file format
+    # @raise [UnknownConvertFormatError] if file format is not known
     # @return [String] result format
     def output_file_type_auto
       return 'docx' if DOCUMENT_EXTENSIONS.include?(@input_filetype.upcase)
       return 'xlsx' if SPREADSHEET_EXTENSIONS.include?(@input_filetype.upcase)
       return 'pptx' if PRESENTATION_EXTENSIONS.include?(@input_filetype.upcase)
+
+      raise UnknownConvertFormatError, "Unknown convert auto format: #{@input_filetype}"
     end
 
     # @return [String] random generated key
