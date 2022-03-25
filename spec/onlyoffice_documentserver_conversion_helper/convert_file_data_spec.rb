@@ -4,11 +4,17 @@ require 'spec_helper'
 
 describe OnlyofficeDocumentserverConversionHelper::ConvertFileData do
   let(:converter) do
-    described_class.new('https://localhost')
+    described_class.new('http://localhost')
   end
 
   describe 'Convert test odt file to pdf' do
     let(:target) { converter.perform_convert(url: ODT_FILE) }
+
+    it_behaves_like 'Correct Request'
+  end
+
+  describe 'Convert test odt file to pdf if only one argument url' do
+    let(:target) { converter.perform_convert(ODT_FILE) }
 
     it_behaves_like 'Correct Request'
   end

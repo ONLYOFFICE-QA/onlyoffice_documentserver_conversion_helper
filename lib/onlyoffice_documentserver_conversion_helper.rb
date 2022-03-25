@@ -123,8 +123,8 @@ module OnlyofficeDocumentserverConversionHelper
 
     # @return [Hash] with usl for download file
     # after conversion and response data
-    # @param [Hash] args collect all parameters of request
-    #   OR [String] if you not need to use advenced params
+    # @param [Hash, Srting] args collect all parameters of request
+    #   OR string if you not need to use advenced params
     # and want to set all etc params automaticly.
     # All args, except of :url and if it is [Hash],
     # will be attache in end of request
