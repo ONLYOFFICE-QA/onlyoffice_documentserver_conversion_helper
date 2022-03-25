@@ -79,16 +79,6 @@ module OnlyofficeDocumentserverConversionHelper
       params
     end
 
-    # @return [String] with url to result file
-    # @param [String] data is a response body
-    # @param [String] file_format is a format of result file
-    # Method will get link from response body.
-    # Link start from 'https', and end from result file format
-    def get_url_from_responce(data, file_format)
-      res_result = /(http|https).*(#{file_format})/.match(data)
-      CGI.unescapeHTML(res_result.to_s)
-    end
-
     # Add jwt data to request
     # @param [Net::HTTP::Post] request to add data
     # @return [Net::HTTP::Post] request with JWT
