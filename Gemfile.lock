@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onlyoffice_documentserver_conversion_helper (0.4.0)
+    onlyoffice_documentserver_conversion_helper (0.5.0)
       jwt (~> 2)
 
 GEM

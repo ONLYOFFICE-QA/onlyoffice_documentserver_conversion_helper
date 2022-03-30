@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.5.0 (2022-03-30)
+
 ### Fixes
 
 * Fix convert result for thumbnail in zip
