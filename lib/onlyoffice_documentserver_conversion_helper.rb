@@ -142,8 +142,23 @@ module OnlyofficeDocumentserverConversionHelper
       @input_filetype = File.extname(@file_url).delete('.')
       advanced_params = autocomplete_missing_params(args)
       data = request(convert_url, advanced_params)
-      url = XmlResponceParser.new(data, advanced_params[:outputtype]).result_url
+      url = XmlResponceParser.new(data,
+                                  advanced_params[:outputtype],
+                                  result_in_zip: result_in_zip?(advanced_params)).result_url
       { url: url, data: data }
+    end
+
+    private
+
+    # Will be result of convert in zip?
+    # @param [Hash] params with options
+    # @return [Boolean]
+    def result_in_zip?(params)
+      return false unless params.key?(:thumbnail)
+      return false unless params[:thumbnail].key?(:first)
+      return true unless params[:thumbnail][:first]
+
+      false
     end
   end
 end
