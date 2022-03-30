@@ -11,6 +11,7 @@
 * Remove unused `ConvertFileData#get_url_from_responce` method
 * Remove `codecov` support and use `simplecov`
 * Increase line and branch test coverage to 100%
+* Move `XmlResponceParser` class to main module
 
 ## 0.4.0 (2022-03-09)
 
