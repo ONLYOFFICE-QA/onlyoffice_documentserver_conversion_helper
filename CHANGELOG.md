@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Fixes
+
+* Fix convert result for thumbnail in zip
+
 ### Changes
 
 * Remove unused `ConvertFileData#get_url_from_responce` method
