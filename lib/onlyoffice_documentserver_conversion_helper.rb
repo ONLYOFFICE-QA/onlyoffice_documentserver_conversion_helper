@@ -144,7 +144,7 @@ module OnlyofficeDocumentserverConversionHelper
       data = request(convert_url, advanced_params)
       url = XmlResponceParser.new(data,
                                   advanced_params[:outputtype],
-                                  result_in_archive: result_in_zip?(advanced_params)).result_url
+                                  result_in_zip: result_in_zip?(advanced_params)).result_url
       { url: url, data: data }
     end
 

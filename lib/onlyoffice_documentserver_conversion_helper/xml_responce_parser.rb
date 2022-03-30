@@ -2,10 +2,10 @@
 
 # Class for parse Xml responce
 class XmlResponceParser
-  def initialize(string_with_xml, file_format, result_in_archive: false)
+  def initialize(string_with_xml, file_format, result_in_zip: false)
     @string_with_xml = string_with_xml
     @file_format = file_format
-    @result_in_archive = result_in_archive
+    @result_in_archive = result_in_zip
   end
 
   # @return [String] output file format
