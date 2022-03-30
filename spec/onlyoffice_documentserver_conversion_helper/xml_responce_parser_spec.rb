@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe XmlResponceParser do
+describe OnlyofficeDocumentserverConversionHelper::XmlResponceParser do
   let(:parser) do
     described_class.new(File.read('assets/responce/formatte_responce_example.xml'), 'docx')
   end
