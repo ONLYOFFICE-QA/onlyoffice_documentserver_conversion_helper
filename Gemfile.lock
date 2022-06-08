@@ -12,7 +12,7 @@ GEM
     diff-lcs (1.5.0)
     docile (1.4.0)
     iniparse (1.5.0)
-    jwt (2.4.0)
+    jwt (2.4.1)
     overcommit (0.59.1)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
