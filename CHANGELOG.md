@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Drop support of `ruby-2.5` since it's EOLed
+
 ## 0.5.0 (2022-03-30)
 
 ### Fixes
