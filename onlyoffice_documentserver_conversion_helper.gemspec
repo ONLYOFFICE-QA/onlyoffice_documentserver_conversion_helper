@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov', 'Dmitry Rotaty']
   s.email = %w[shockwavenn@gmail.com]
   s.summary = 'onlyoffice_documentserver_conversion_helper Gem'
-  s.description = 'Helper method for using '\
+  s.description = 'Helper method for using ' \
                   'ONLYOFFICE DocumentServer conversion api'
   s.homepage = "https://github.com/ONLYOFFICE-QA/#{s.name}"
   s.metadata = {
