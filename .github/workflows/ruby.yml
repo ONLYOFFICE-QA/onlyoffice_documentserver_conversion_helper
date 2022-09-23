@@ -19,7 +19,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Run DocumentServer
         run: |
-          docker run -id -p 80:80 onlyoffice/documentserver:latest
+          docker run -id -p 80:80 -e JWT_ENABLED=false onlyoffice/documentserver:latest
           sleep 120
       - name: Build and test with Rake
         run: |
