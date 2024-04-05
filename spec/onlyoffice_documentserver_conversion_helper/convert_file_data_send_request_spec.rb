@@ -6,7 +6,7 @@ describe OnlyofficeDocumentserverConversionHelper::ConvertFileData, '#send_reque
   let(:converter) { described_class.new('http://localhost', timeout: 10) }
 
   it 'correctly handle 504 errors' do
-    url504 = URI('https://httpstat.us/504')
+    url504 = URI('https://httpstatuses.maor.io/504')
     http = Net::HTTP.new(url504.host, url504.port)
     http.use_ssl = true
     req = Net::HTTP::Post.new(url504)
