@@ -12,6 +12,7 @@
 
 * Drop support of `ruby-2.5`, `ruby-2.6`, `ruby-2.7` since it's EOLed
 * Change site used to mock 504 response
+* Fix `rubocop-1.65.0` cop `Gemspec/AddRuntimeDependency`
 
 ## 0.5.0 (2022-03-30)
 
