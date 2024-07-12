@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
-  s.add_runtime_dependency('jwt', '~> 2')
+  s.add_dependency('jwt', '~> 2')
 end
