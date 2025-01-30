@@ -17,7 +17,7 @@ GEM
     json (2.9.1)
     jwt (2.10.1)
       base64
-    language_server-protocol (3.17.0.3)
+    language_server-protocol (3.17.0.4)
     logger (1.6.5)
     overcommit (0.66.0)
       childprocess (>= 0.6.3, < 6)
