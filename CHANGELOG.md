@@ -16,6 +16,10 @@
 * Fix `rubocop-1.65.0` cop `Gemspec/AddRuntimeDependency`
 * Remove `ruby-3.0` from CI, since it's EOLed
 
+### Fixes
+
+* Run `rubocop` in CI through `bundle exec`
+
 ## 0.5.0 (2022-03-30)
 
 ### Fixes
